@@ -4,18 +4,24 @@
 
 ## О боте
 Его созадют по инициативе ГН [Political World](https://discord.gg/d9dMaQTbye).
+
 Он созадётся @toadtg и @raik
+
 Код открыт на момент смены системы ников discord ники могут не соотвествовать реальным.
+
 Мы его пишем на Java с MySQL и Discord4J
 
 ## Условия использывания
 В !help вы должны использывать следующее:
+
 ![not_original](https://i.imgur.com/DpgrMrK.png)
 
 Пока в оригинале:
+
 ![original](https://cdn.discordapp.com/attachments/1082327909722751029/1113760150344437760/image.png)
 
 Так же в описании вашего приложения должна быть ссылка на [Political World](https://discord.gg/d9dMaQTbye)
+
 ![bot_bio](https://github.com/dttric/PWBot/assets/87319664/7a194b78-6802-42c9-af1f-3842dec978c5)
 
 ***Вы не имеете права продавать/закрывать код***
@@ -33,4 +39,5 @@
 | Экономика | | x |
 | Модерация | | x |
 | Регистрация | | x |
+
 Больше скоро...
