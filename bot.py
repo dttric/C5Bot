@@ -68,14 +68,23 @@ async def referend(ctx, *values):
 
 @bot.command()
 async def cal(ctx, *values):
-    evaled = eval(" ".join(values))
+    evaled = int(eval(" ".join(values)))
     if evaled == False:
         evaled = "Неверно"
     elif evaled == True:
         evaled = "Верно"
-    embed=discord.Embed(title="Ответ бота", description=evaled, color=0xff0000)
+    embed=discord.Embed(title="Калькулятор", description=evaled, color=0xff0000)
     await ctx.send(embed=embed)
 
+@bot.command()
+async def e(ctx, *values):
+    if ctx.author.id == int(os.environ["BOT_OWNER"]):
+        evaled = eval(" ".join(values))
+        embed=discord.Embed(title="!eval", description=evaled, color=0xff0000)
+        await ctx.send(embed=embed)
+    else:
+        embed=discord.Embed(title="Ошибка!", description="Ты не владелец бота", color=0xff0000)
+        await ctx.send(embed=embed)
 
 @bot.command()
 async def create_item(ctx, arg1, arg2, arg3):
