@@ -14,6 +14,11 @@ intents = discord.Intents.all()
 prefix = "!"
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
+
+for filename in os.listdir("./cogs"):
+    if filename.endswith(".py"):
+        bot.load_extension(f"cogs.{filename[:-3]}")
+
 @bot.command()
 async def load(ctx, extension):
     if ctx.author.id == int(os.environ["BOT_OWNER"]):
@@ -30,7 +35,6 @@ async def unload(ctx, extension):
     else:
         await ctx.send("Выгрузить бота может только лягушка")
 
-discord.on_ready()
 @bot.command()
 async def reload(ctx, extension):
     if ctx.author.id == int(os.environ["BOT_OWNER"]):
@@ -39,9 +43,5 @@ async def reload(ctx, extension):
         await ctx.send("Бот перезагружен")
     else:
         await ctx.send("Перезагрузить бота может только лягушка")
-
-for filename in os.listdir("./cogs"):
-    if filename.endswith(".py"):
-        bot.load_extension(f"cogs.{filename}")
 
 bot.run(os.environ["TOKEN"])
