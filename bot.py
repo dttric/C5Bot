@@ -10,14 +10,14 @@ import mysql.connector
 dotenv.load_dotenv(dotenv.find_dotenv())
 
 intents = discord.Intents.all()
-# cursor = connection.cursor()
+
 prefix = "!"
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
 @bot.command()
 async def load(ctx, extension):
     if ctx.author.id == int(os.environ["BOT_OWNER"]):
-        bot.load_extension(f"cogs.{extension}")
+        await bot.load_extension(f"cogs.{extension}")
         await ctx.send("Бот загружен")
     else:
         await ctx.send("Загрузить бота может только лягушка")
@@ -25,22 +25,23 @@ async def load(ctx, extension):
 @bot.command()
 async def unload(ctx, extension):
     if ctx.author.id == int(os.environ["BOT_OWNER"]):
-        bot.unload_extension(f"cogs.{extension}")
+        await bot.unload_extension(f"cogs.{extension}")
         await ctx.send("Бот выгружен")
     else:
         await ctx.send("Выгрузить бота может только лягушка")
 
+discord.on_ready()
 @bot.command()
 async def reload(ctx, extension):
     if ctx.author.id == int(os.environ["BOT_OWNER"]):
-        bot.unload_extension(f"cogs.{extension}")
-        bot.load_extension(f"cogs.{extension}")
+        await bot.unload_extension(f"cogs.{extension}")
+        await bot.load_extension(f"cogs.{extension}")
         await ctx.send("Бот перезагружен")
     else:
         await ctx.send("Перезагрузить бота может только лягушка")
 
-for filename in os.listdir("./commands"):
+for filename in os.listdir("./cogs"):
     if filename.endswith(".py"):
-        bot.load_extension(f"cogs.{filename[:-3]}")
+        bot.load_extension(f"cogs.{filename}")
 
 bot.run(os.environ["TOKEN"])

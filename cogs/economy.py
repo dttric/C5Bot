@@ -15,7 +15,9 @@ connection = mysql.connector.connect(
     password=os.environ["DB_PASSWORD"],
     database=os.environ["DB_DATABASE"],
 )
-# !!!ЭТО РАСКОММЕНТИРОВАТЬ ТОЛЬКО НАПЕРВЫЙ ЗАПУСК БОТА!!!
+# !!!ЭТО РАСКОММЕНТИРОВАТЬ ТОЛЬКО НА ПЕРВЫЙ ЗАПУСК БОТА!!!
+
+# cursor = connection.cursor()
 # cursor.execute("""
 # CREATE TABLE users (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
