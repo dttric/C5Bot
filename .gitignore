@@ -1,6 +1,2 @@
-*.class
-*.jar
 .vscode
 .env
-hs_err_pid*
-replay_pid*
