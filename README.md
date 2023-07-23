@@ -5,11 +5,9 @@
 ## О боте
 Его созадют по инициативе ГН [Political World](https://discord.gg/d9dMaQTbye).
 
-Он созадется @iraik и @toadtg
+Он созадется @theoriginaldtg
 
-Код открыт на момент смены системы ников discord ники могут не соотвествовать реальным.
-
-Мы его пишем на Python с f"{невыбранная_база_данных}" и PyCord
+Я пишу на Python используя PyCord и [jsodb](https://github.com/dttric/jsodb)
 
 ## Условия использования
 В !help вы должны использовать следующее:
