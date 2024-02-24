@@ -1,3 +1,5 @@
+![C5banner](https://github.com/dttric/C5Bot/assets/87319664/51309aff-df13-4d2e-8925-4dd45dad3a27)
+
 ## О боте
 Для Project C5
 
