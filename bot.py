@@ -5,7 +5,6 @@ import time
 import dotenv
 import os
 import datetime
-import mysql.connector
 
 dotenv.load_dotenv(dotenv.find_dotenv())
 

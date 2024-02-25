@@ -5,7 +5,6 @@ import time
 import dotenv
 import os
 import datetime
-import mysql.connector
 
 class Other(commands.Cog):
     def __init__(self, bot):
@@ -17,8 +16,8 @@ class Other(commands.Cog):
 
     @commands.command()
     async def referend(self, ctx, *values):
-        if ctx.channel.id != 1068947402398105651:
-            embed = discord.Embed(title="Ошибка", description="Доступно только в <#1068947402398105651>", color=0xff0000)
+        if ctx.channel.id != 1211195657390522410:
+            embed = discord.Embed(title="Ошибка", description="Доступно только в <#1211195657390522410>", color=0xff0000)
             await ctx.send(embed=embed)
         elif values == "":
             embed = discord.Embed(title="Ошибка", description="Введите тему референдума", color=0xff0000)
@@ -32,16 +31,6 @@ class Other(commands.Cog):
             embed.add_field(name="Не согласны", value=f"{nesogl}%", inline=False)
             embed.add_field(name="Не пришли", value=f"{yavka}%", inline=False)
             await ctx.send(embed=embed)
-
-    @commands.command()
-    async def cal(self, ctx, *values):
-        evaled = int(eval(" ".join(values)))
-        if evaled == False:
-            evaled = "Неверно"
-        elif evaled == True:
-            evaled = "Верно"
-        embed=discord.Embed(title="Калькулятор", description=evaled, color=0xff0000)
-        await ctx.send(embed=embed)
 
     @commands.command()
     async def e(self, ctx, *values):
