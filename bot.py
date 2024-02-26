@@ -24,17 +24,7 @@ async def on_ready():
 async def shutdown(ctx):
     if ctx.author.id == int(os.environ["BOT_OWNER"]):
         await ctx.send("Пока...")
-        await bot.logout()
-    else:
-        await ctx.send("Так может только лягушка.")
-        
-
-@bot.command()
-async def restart(ctx):
-    if ctx.author.id == int(os.environ["BOT_OWNER"]):
         await bot.close()
-        await bot.start(os.environ["TOKEN"])
-        await ctx.send("Доброго утра! Пусть день сложится удачно!")
     else:
         await ctx.send("Так может только лягушка.")
 

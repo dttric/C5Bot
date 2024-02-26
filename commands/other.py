@@ -41,6 +41,10 @@ class Other(commands.Cog):
         else:
             embed=discord.Embed(title="Ошибка!", description="Ты не владелец бота", color=0xff0000)
             await ctx.send(embed=embed)
+            
+    @commands.command(description="Создает красивый шаблон, чтобы не писать вручную.")
+    async def шаблон(self, ctx):
+        await ctx.respond("понг")
     
 def setup(bot):
     bot.add_cog(Other(bot))
